@@ -70,7 +70,7 @@ func Distance(lhs, rhs []rune) float64 {
 		if !score1[i] {
 			continue
 		}
-		for !score2[j] {
+		for j < ml && !score2[j] {
 			j++
 		}
 		if score1[i] != score2[j] {
