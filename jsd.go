@@ -31,10 +31,10 @@ func Distance(lhs, rhs []rune) float64 {
 	rl1, rl2 := len(lhs), len(rhs)
 
 	if rl1 == 0 || rl2 == 0 {
-		return 0.0
+		return 0
 	}
 	if rl1 == rl2 && isSame(lhs, rhs) {
-		return 1.0
+		return 1
 	}
 
 	dist := rl1
