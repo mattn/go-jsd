@@ -51,7 +51,7 @@ func Distance(lhs, rhs []rune) float64 {
 		lo := max(0, i-dist)
 		hi := min(i+dist+1, rl2)
 		for j := lo; j < hi; j++ {
-			if score1[j] || lhs[i] != rhs[j] {
+			if score2[j] || lhs[i] != rhs[j] {
 				continue
 			}
 			score1[i] = true
@@ -67,16 +67,9 @@ func Distance(lhs, rhs []rune) float64 {
 	n := float64(0)
 	j := 0
 	for i := 0; i < rl1; i++ {
-		if !score1[i] {
-			continue
-		}
-		for j < ml && !score2[j] {
-			j++
-		}
-		if j < ml && score1[i] != score2[j] {
+		if score1[i] != score2[j] {
 			n++
 		}
-		j++
 	}
 	n /= 2
 
